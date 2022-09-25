@@ -44,8 +44,8 @@ class WebFactory:
     def request_option(self, url, option):
         if option == "verify":
             urllib3.disable_warnings()
-            xml = req.get(url, verify=False, headers={'User-Agent': Environ.USER_AGENT})
-            soup = bs(xml.text, features='lxml')
+            lxml = req.get(url, verify=False, headers={'User-Agent': Environ.USER_AGENT})
+            soup = bs(lxml.content, features='lxml-xml')
             return soup
         else:
             html = req.get(url, headers={'User-Agent': Environ.USER_AGENT})
