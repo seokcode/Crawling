@@ -25,8 +25,8 @@ class WebFactory:
 
     def headless_option(self):
         option = Options()  # 옵션 생성
-        option.add_argument('user-agent=' + Environ.USER_AGENT)
         option.add_argument('headless')  # 브라우저가 뜨지 않고 실행
+        option.add_argument('user-agent=' + Environ.USER_AGENT)
         option.add_argument("disable-infobars")
         option.add_argument('disable-gpu')  # gpu 사용 안함
         option.add_argument('incognito')  # 시크릿 모드
