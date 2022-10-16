@@ -38,7 +38,7 @@ class WebFactory:
         option.add_argument('incognito')  # 시크릿 모드
 
     def get_request(self, url, option):
-        soup = self.request_option(url, option)
+        soup = self.request_option(url, self.request_option(url, option))
         return soup
 
     def request_option(self, url, option):
